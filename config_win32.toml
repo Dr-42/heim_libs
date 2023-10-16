@@ -1,0 +1,20 @@
+[build]
+compiler = "clang"
+
+[[targets]]
+name = "libheimmemory"
+src = "./src/heim_memory/"
+include_dir = "./src/heim_memory/include/"
+type = "dll"
+cflags = "-g -Wall -Wextra -Wunused"
+libs = ""
+deps = [""]
+
+[[targets]]
+name = "testbed"
+src = "./src/testbed"
+include_dir = "./src/testbed/include/"
+type = "exe"
+cflags = "-g -Wall"
+libs = ""
+deps = ["libheimmemory"]
