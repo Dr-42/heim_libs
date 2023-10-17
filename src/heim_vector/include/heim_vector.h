@@ -7,10 +7,26 @@
 #define heim_vector_free(ptr) _heim_vector_free(ptr)
 
 #define heim_vector_push(ptr, item) _heim_vector_push(	\
-						ptr,							\
-						(void*)&(typeof(item)){item}	\
+						(void*)ptr,						\
+						(void*)item						\
 )
 
+#define heim_vector_pop(dst, ptr) _heim_vector_pop(	\
+						(void*)dst,					\
+						(void*)ptr					\
+)
+
+#define heim_vector_insert(ptr, item, index) _heim_vector_insert(	\
+						(void*)ptr,									\
+						(void*)item,								\
+						(size_t)index								\
+)
+
+#define heim_vector_pop_at(dst, ptr, index) _heim_vector_pop_at(\
+						(void*)dst,								\
+						(void*)ptr,								\
+						(size_t)index							\
+)
 
 // Internal vector implementation
 void* _heim_vector_new(size_t size);

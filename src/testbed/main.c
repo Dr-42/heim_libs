@@ -11,33 +11,33 @@ void dump_vector(int* vector) {
 }
 
 int main() {
+    printf("Heim Vector Test\n--------------\n\n");
     int* vector = heim_vector_new(int);
-    heim_vector_push(vector, 1);
-
-    // printf("vec[0] = %d\n", vector[0]);
-
-    // printf("vec[1] = %d\n", vector[1]);
-
-    heim_vector_push(vector, 2);
-    heim_vector_push(vector, 3);
-
+    
     int a = 1;
-    _heim_vector_push(vector, &a);
+    int b = 2;
+    int c = 3;
+    int d = 4;
+    int f = 5;
 
-    heim_vector_push(vector, 4);
-
+    heim_vector_push(vector, &a);
+    heim_vector_push(vector, &b);
+    heim_vector_push(vector, &c);
+    heim_vector_push(vector, &d);
     dump_vector(vector);
 
     int popped;
-    _heim_vector_pop(&popped, vector);
+    heim_vector_pop(&popped, vector);
     printf("Popped last: %d\n", (int)popped);
 
-    _heim_vector_pop_at(&popped, vector, 1);
+    heim_vector_pop_at(&popped, vector, 1);
     printf("Popped at 1: %d\n", (int)popped);
     dump_vector(vector);
 
-    _heim_vector_insert(vector, &(int){5}, 0);
+    heim_vector_insert(vector, &f, 0);
     dump_vector(vector);
+
+    heim_vector_free(vector);
 
     return 0;
 }
