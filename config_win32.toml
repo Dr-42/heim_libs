@@ -20,10 +20,19 @@ libs = ""
 deps = [""]
 
 [[targets]]
+name = "libtester"
+src = "./src/heim_tester/"
+include_dir = "./src/heim_tester/include/"
+type = "dll"
+cflags = "-g -Wall -Wextra -Wunused"
+libs = ""
+deps = [""]
+
+[[targets]]
 name = "testbed"
 src = "./src/testbed"
 include_dir = "./src/testbed/include/"
 type = "exe"
 cflags = "-g -Wall"
 libs = ""
-deps = ["libheimvector"]
+deps = ["libheimvector", "libtester"]
