@@ -2,6 +2,17 @@
 
 #include <stddef.h>
 
+// API
+#define heim_vector_new(type) (type*)_heim_vector_new(sizeof(type))
+#define heim_vector_free(ptr) _heim_vector_free(ptr)
+
+#define heim_vector_push(ptr, item) _heim_vector_push(	\
+						ptr,							\
+						(void*)&(typeof(item)){item}	\
+)
+
+
+// Internal vector implementation
 void* _heim_vector_new(size_t size);
 void _heim_vector_free(void* ptr);
 

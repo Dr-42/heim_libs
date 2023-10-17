@@ -11,11 +11,20 @@ void dump_vector(int* vector) {
 }
 
 int main() {
-    int* vector = (int*)_heim_vector_new(sizeof(int));
-    _heim_vector_push(vector, &(int){1});
-    _heim_vector_push(vector, &(int){2});
-    _heim_vector_push(vector, &(int){3});
-    _heim_vector_push(vector, &(int){4});
+    int* vector = heim_vector_new(int);
+    heim_vector_push(vector, 1);
+
+    // printf("vec[0] = %d\n", vector[0]);
+
+    // printf("vec[1] = %d\n", vector[1]);
+
+    heim_vector_push(vector, 2);
+    heim_vector_push(vector, 3);
+
+    int a = 1;
+    _heim_vector_push(vector, &a);
+
+    heim_vector_push(vector, 4);
 
     dump_vector(vector);
 

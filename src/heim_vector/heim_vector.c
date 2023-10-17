@@ -1,6 +1,5 @@
 #include "heim_vector.h"
 
-#include <corecrt.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,7 +8,7 @@
 #define VECTOR_RESIZE_FACTOR 2
 
 #define todo() do{ \
-	fprintf(stderr, "TODO: %s:%d %s\n", __FILE__, __LINE__, __func__); \
+	fprintf(stderr, "TODO : %s:%d %s\n", __FILE__, __LINE__, __func__); \
 	exit(1); \
 } while(0);
 
