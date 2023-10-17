@@ -2,6 +2,15 @@
 compiler = "clang"
 
 [[targets]]
+name = "libheimvector"
+src = "./src/heim_vector/"
+include_dir = "./src/heim_vector/include/"
+type = "dll"
+cflags = "-g -Wall -Wextra -Wunused"
+libs = ""
+deps = [""]
+
+[[targets]]
 name = "libheimmemory"
 src = "./src/heim_memory/"
 include_dir = "./src/heim_memory/include/"
@@ -17,4 +26,4 @@ include_dir = "./src/testbed/include/"
 type = "exe"
 cflags = "-g -Wall"
 libs = ""
-deps = ["libheimmemory"]
+deps = ["libheimvector"]
